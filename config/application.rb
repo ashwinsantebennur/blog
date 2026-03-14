@@ -38,5 +38,10 @@ module Blog
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Use Rspec as a default test framework
+    config.generators do |g|
+      g.test_framework :rspec
+    end
   end
 end
