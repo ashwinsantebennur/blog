@@ -22,3 +22,10 @@ This README would normally document whatever steps are necessary to get the appl
     5) git remote add origin git@github.com:ashwinsantebennur/blog.git
     6) git push -u origin main
 3) Run git status / git log to check the status of commits.
+
+*****  Steps to start using Rspec as test framework  *****
+----------------------------------------------------------
+1) Open Gemfile and add "gem 'rspec-rails', '~> 8.0'" to file
+2) Navigate Terminal to project path
+3) Run 'rails generate rspec:install'
+4) 
