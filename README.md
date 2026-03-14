@@ -11,6 +11,7 @@ This README would normally document whatever steps are necessary to get the appl
 5) Install rails version --> Run 'gem install rails -v=8.1.0'
 6) Create blog application with postgresql db and no test framework --> Run 'rails _8.1.0_ new . --database=postgresql -T'
 
+
 *****  Git repo creation and initial push  *****
 ------------------------------------------------
 1) Navigate to github.com and create 'blog' repository
@@ -23,9 +24,15 @@ This README would normally document whatever steps are necessary to get the appl
     6) git push -u origin main
 3) Run git status / git log to check the status of commits.
 
+
 *****  Steps to start using Rspec as test framework  *****
 ----------------------------------------------------------
 1) Open Gemfile and add "gem 'rspec-rails', '~> 8.0'" to file
 2) Navigate Terminal to project path
 3) Run 'rails generate rspec:install'
-4) 
+4) Add following lines to /config/application.rb file
+
+    # Use Rspec as a default test framework
+    config.generators do |g|
+      g.test_framework :rspec
+    end
