@@ -15,9 +15,10 @@ This README would normally document whatever steps are necessary to get the appl
 ------------------------------------------------
 1) Navigate to github.com and create 'blog' repository
 2) Navigate to 'blog' project folder and run following commands
-    git init
-    git add *
-    git commit -m "first commit"
-    git branch -M main
-    git remote add origin git@github.com:ashwinsantebennur/blog.git
-    git push -u origin main
+    1) git init
+    2) git add .
+    3) git commit -m "Initial application commit"
+    4) git branch -M main
+    5) git remote add origin git@github.com:ashwinsantebennur/blog.git
+    6) git push -u origin main
+3) Run git status / git log to check the status of commits.
