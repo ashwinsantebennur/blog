@@ -1,10 +1,66 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+
+body {
+    margin: 0; /* Remove default body margin */
+    font-family: sans-serif;
+    display: flex; /* Use Flexbox for layout */
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+}
+
+header {
+    background-color: #4CAF50;
+    color: black;
+    text-align: center;
+    /* padding: 1em; */
+}
+
+.wa_title {
+    float: left;
+    width: 50%;
+}
+
+.header_links {
+    float: right;
+    width: 50%;
+}
+
+.header_links p {
+    text-align: right;
+}
+
+main {
+    padding: 10px;
+    flex-grow: 1; /* Allows main to grow and fill the available space */
+}
+
+#posts {
+    border: 5px;
+    border-color: #000d01;
+}
+
+.bg-light {
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.bg-dark {
+    padding: 10px;
+    background-color: rgb(244, 219, 219);
+}
+
+.post-title {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.show-links {
+    padding: 10px 0px;
+}
+
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    /* padding: 1em; */
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
