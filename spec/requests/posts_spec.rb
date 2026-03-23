@@ -3,11 +3,12 @@ require 'rails_helper'
 RSpec.describe "/posts", type: :request do
 
   # Here i'm creating a session for a user. Unless there is a session all requests which need authentication will be failed.
-  let(:password) { "password" }
-  let(:user) { User.create!(name: 'tester', email_address: "test@example.com", password: password) }
-  before do 
-    sign_in(user, password: password)
-  end
+  # let(:password) { "password" }
+  # let(:user) { User.create!(name: 'tester', email_address: "test@example.com", password: password) }
+  # before do 
+  #   sign_in(user, password: password)
+  # end
+  include_context "authenticated"
 
   let(:valid_attributes) { 
     { title: "Test Post 1", body: "This is a test post body" } 
