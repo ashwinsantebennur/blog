@@ -1,12 +1,14 @@
 <p style="color: green"><%= notice %></p>
 <div>
   <div>
+  <% cache @post do %>
     <div class="post-title">
       <%= @post.title %>      
     </div>
     <div class="post-body">
-    <%= @post.body %>      
+      <%= @post.body %>      
     </div>
+  <% end %>
   </div>
 </div>
 <div class="show-links">
