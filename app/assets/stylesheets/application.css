@@ -57,6 +57,10 @@ main {
     padding: 10px 0px;
 }
 
+.show-links a{
+    color: blue;
+}
+
 footer {
     background-color: #4CAF50;
     color: white;

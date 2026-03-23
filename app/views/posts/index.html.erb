@@ -3,7 +3,9 @@
 <% content_for :title, "Posts" %>
 
 <h1>Posts</h1>
-<p style="font-weight: bold; font-size: larger;"><%= link_to "Create New Post", new_post_path %></p>
+<p style="font-weight: bold; font-size: larger;">
+  <%= link_to "Create New Post", new_post_path if authenticated? %>
+</p>
 <div id="posts">
   <% @posts.each do |post| %>
     <div id="<%= dom_id post %>" class="<%= cycle('bg-dark', 'bg-light') %>">
