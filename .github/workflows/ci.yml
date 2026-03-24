@@ -72,8 +72,8 @@ jobs:
       postgres:                        # remove if not using postgres
         image: postgres:15
         env:
-          POSTGRES_USER: ashwin
-          POSTGRES_PASSWORD: ashwin
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
           POSTGRES_DB: blog_test
         ports: ["5432:5432"]
         options: >-
@@ -84,7 +84,7 @@ jobs:
 
     env:
       RAILS_ENV: test
-      DATABASE_URL: postgres://postgres:postgres@localhost:5432/myapp_test
+      DATABASE_URL: postgres://postgres:postgres@127.0.0.1:5432/blog_test
 
     steps:
       - name: Checkout code
@@ -95,6 +95,13 @@ jobs:
         with:
           ruby-version: .ruby-version      # reads from your .ruby-version file
           bundler-cache: true              # runs bundle install & caches gems
+
+      - name: Wait for Postgres
+        run: |
+          until pg_isready -h 127.0.0.1 -p 5432 -U postgres; do
+            echo "Waiting for postgres..."
+            sleep 1
+          done
 
       - name: Set up database
         run: |
