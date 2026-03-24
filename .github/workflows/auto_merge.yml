@@ -12,8 +12,12 @@ jobs:
     if: startsWith(github.head_ref, 'feature_')
 
     steps:
+      - name: Checkout  # ← This was missing!
+        uses: actions/checkout@v4
+
       - name: Enable Auto-Merge
         uses: peter-evans/enable-pull-request-automerge@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          merge-method: squash  # or merge / rebase
+          pull-request-number: ${{ github.event.pull_request.number }}  # ← This was missing!
+          merge-method: squash
