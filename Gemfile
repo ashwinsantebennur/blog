@@ -57,7 +57,7 @@ group :development, :test do
   gem "rspec-rails", "~> 8.0"
 end
 
-group :test do 
+group :test do
   # Use Rspec as test framework by default
   gem "rspec-rails", "~> 8.0"
   gem "rspec_junit_formatter"
