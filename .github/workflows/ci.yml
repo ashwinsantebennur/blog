@@ -1,9 +1,12 @@
 name: CI
 
 on:
-  pull_request:
   push:
-    branches: [ main ]
+    branches:
+      - 'feature_**'
+  pull_request:
+    branches:
+      - main
 
 jobs:
   scan_ruby:
