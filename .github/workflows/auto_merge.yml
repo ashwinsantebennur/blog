@@ -1,0 +1,19 @@
+name: Auto Merge PR
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+
+jobs:
+  auto_merge:
+    runs-on: ubuntu-latest
+    if: startsWith(github.head_ref, 'feature_')
+
+    steps:
+      - name: Enable Auto-Merge
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          merge-method: squash  # or merge / rebase
