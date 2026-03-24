@@ -33,3 +33,5 @@
 # Ignore key files for decrypting credentials and more.
 /config/*.key
 
+# Ignoring this file to avoid conflicts in creating db in local and github actions system.
+/config/database.yml
