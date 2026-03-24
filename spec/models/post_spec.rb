@@ -21,7 +21,7 @@ RSpec.describe Post, type: :model do
 
   # Check for uniqueness of title
   subject { described_class.new(title: "An existing title", body: "Some content") }
-  
+
   context 'when the title is not unique' do
     before { described_class.create!(title: "An existing title", body: "Other content") }
     it 'is invalid as the title is not unique' do

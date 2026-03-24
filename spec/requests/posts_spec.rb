@@ -1,14 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe "/posts", type: :request do
-
   include_context "authenticated"
 
-  let(:valid_attributes) { 
-    { title: "Test Post 1", body: "This is a test post body" } 
+  let(:valid_attributes) {
+    { title: "Test Post 1", body: "This is a test post body" }
   }
-  let(:invalid_attributes) { 
-    { title: "", body: "" } 
+  let(:invalid_attributes) {
+    { title: "", body: "" }
   }
 
   describe "GET /index" do
@@ -72,8 +71,8 @@ RSpec.describe "/posts", type: :request do
 
   describe "PATCH /update" do
     context "with valid parameters" do
-      let(:new_attributes) { 
-        { title: "Test Post 1", body: "This is a test post body" } 
+      let(:new_attributes) {
+        { title: "Test Post 1", body: "This is a test post body" }
       }
 
       it "updates the requested post" do

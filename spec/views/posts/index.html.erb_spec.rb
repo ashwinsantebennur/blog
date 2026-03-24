@@ -13,9 +13,9 @@ RSpec.describe "posts/index", type: :view do
       )
     ])
   end
-# Getting following error. Need to fix it later.
-# ActiveRecord::RecordInvalid:
-#        Validation failed: Title has already been taken
+  # Getting following error. Need to fix it later.
+  # ActiveRecord::RecordInvalid:
+  #        Validation failed: Title has already been taken
   # it "renders a list of posts" do
   #   render
   #   cell_selector = 'div>p'
