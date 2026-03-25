@@ -3,11 +3,15 @@ require 'rails_helper'
 RSpec.describe "/posts", type: :request do
   include_context "authenticated"
 
+  let(:user) { User.create(name: "John", email_address: "john@example.com", password: "password123") }
+  before do
+    post session_path, params: { email_address: user.email_address, password: "password123" }
+  end
   let(:valid_attributes) {
-    { title: "Test Post 1", body: "This is a test post body" }
+    { title: "Test Post 1", body: "This is a test post body", author: user }
   }
   let(:invalid_attributes) {
-    { title: "", body: "" }
+    { title: "", body: "", author: "" }
   }
 
   describe "GET /index" do

@@ -8,11 +8,20 @@
     <div class="post-body">
       <%= @post.body %>      
     </div>
+    <div class="author-info">
+      <p>
+        By: <%= @post.author.name %> | 
+        Created <%= time_ago_in_words(@post.created_at) %> ago | 
+        Last updated <%= time_ago_in_words(@post.updated_at) %> ago
+      </p>
+    </div>
   <% end %>
   </div>
 </div>
 <div class="show-links">
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %> | 
-  <%= link_to "Delete this post", posts_path, data: { turbo_method: :delete} %>
+  <% if current_user == @post.author %>
+    <%= link_to "Edit this post", edit_post_path(@post) %> |
+    <%= link_to "Delete this post", posts_path, data: { turbo_method: :delete} %>
+  <% end %>
+  <%= link_to "Back to posts", posts_path %>
 </div>

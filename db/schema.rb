@@ -10,15 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_03_23_064841) do
+ActiveRecord::Schema[8.1].define(version: 2026_03_25_114341) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
   create_table "posts", force: :cascade do |t|
+    t.bigint "author_id", null: false
     t.text "body"
     t.datetime "created_at", null: false
     t.string "title"
     t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_posts_on_author_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -39,5 +41,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_23_064841) do
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
+  add_foreign_key "posts", "users", column: "author_id"
   add_foreign_key "sessions", "users"
 end
