@@ -1,15 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe "posts/index", type: :view do
+  let(:user) { User.create(name: "John", email_address: "john@example.com", password: "password123") }
   before(:each) do
     assign(:posts, [
       Post.create!(
         title: "Title",
-        body: "MyText"
+        body: "MyText",
+        author: user
       ),
       Post.create!(
         title: "Title",
-        body: "MyText"
+        body: "MyText",
+        author: user
       )
     ])
   end
