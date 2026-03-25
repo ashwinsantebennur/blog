@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-
   let(:user) { User.create(name: "John", email_address: "john@example.com", password: "password123") }
 
   # Example of a valid post

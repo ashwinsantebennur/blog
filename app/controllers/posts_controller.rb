@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :authorize_author!, only: [:edit, :update, :destroy]
+  before_action :authorize_author!, only: [ :edit, :update, :destroy ]
   allow_unauthenticated_access only: %i[ index show ]
 
   # GET /posts or /posts.json
