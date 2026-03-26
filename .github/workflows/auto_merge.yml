@@ -9,15 +9,15 @@ on:
 jobs:
   auto_merge:
     runs-on: ubuntu-latest
-    if: startsWith(github.head_ref, 'feature_')
+    if: startsWith(github.head_ref, 'feature_') || startsWith(github.head_ref, 'dependabot/')
 
     steps:
-      - name: Checkout  # ← This was missing!
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Enable Auto-Merge
         uses: peter-evans/enable-pull-request-automerge@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          pull-request-number: ${{ github.event.pull_request.number }}  # ← This was missing!
+          pull-request-number: ${{ github.event.pull_request.number }}
           merge-method: squash
